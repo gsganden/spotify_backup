@@ -13,14 +13,14 @@ A self-contained Python script to backup all your Spotify playlists to a JSON fi
 
 ## Setup
 
-1. Create a Spotify app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Create a `.env` file with your credentials:
+- Create a Spotify app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+- Copy `.env.example` to `.env`:
 
+```bash
+cp .env.example .env
 ```
-SPOTIFY_CLIENT_ID=your_client_id_here
-SPOTIFY_CLIENT_SECRET=your_client_secret_here
-SPOTIFY_REDIRECT_URI=http://localhost:8080/callback
-```
+
+- Edit `.env` with your actual values.
 
 ## Usage
 

@@ -28,10 +28,15 @@ REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI")
 
 # Authenticate with Spotify
 scope = "playlist-read-private"
-sp = Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
-                                       client_secret=CLIENT_SECRET,
-                                       redirect_uri=REDIRECT_URI,
-                                       scope=scope))
+auth_manager = SpotifyOAuth(
+    client_id=CLIENT_ID,
+    client_secret=CLIENT_SECRET,
+    redirect_uri=REDIRECT_URI,
+    scope=scope,
+    open_browser=True,
+    cache_path=Path.home() / ".spotify_cache"
+)
+sp = Spotify(auth_manager=auth_manager)
 
 # Get current user's playlists
 def get_user_playlists():
